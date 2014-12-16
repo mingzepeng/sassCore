@@ -13,7 +13,7 @@
 
 // inline-block
 // ie6-7 *display: inline;*zoom:1;
-@mixin inline-block ($extend:true) {
+@mixin inline-block ($extend:false) {
   @if $extend {
     @extend %inline-block;
   } @else {
@@ -29,7 +29,7 @@
 
 // Center-align a block level element
 // block得有宽度margin左右为auto才能居中
-@mixin center-block ($extend:true) {
+@mixin center-block ($extend:false) {
   @if $extend {
     @extend %center-block;
   } @else {
@@ -52,9 +52,14 @@
   @include float;
 }
 
+
+%float-right{
+  @include float(right);
+}
+
 // clearfix
 // 闭合子元素的浮动
-@mixin clearfix ($extend:true) {
+@mixin clearfix ($extend:false) {
   @if $extend {
     @extend %clearfix;
   } @else {
@@ -77,7 +82,7 @@
 
 // Hide from both screenreaders and browsers: h5bp.com/u
 // 既隐藏于视觉也隐藏于屏幕浏览器
-@mixin hidden ($extend:true) {
+@mixin hidden ($extend:false) {
   @if $extend {
     @extend %hidden;
   } @else {
@@ -91,7 +96,7 @@
 
 // Hide only visually, but have it available for screenreaders
 // 只隐藏于视觉，屏幕浏览器可以阅读
-@mixin visually-hidden ($extend:true) {
+@mixin visually-hidden ($extend:false) {
   @if $extend {
     @extend %visually-hidden;
   } @else {
